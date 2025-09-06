@@ -17,7 +17,7 @@ The system handles request submissions, validates them against available balance
 -   **Automated Annual Reset:** On January 1st of each year, all employee PTO balances automatically reset to the annual allowance with zero manual intervention.
 -   **Intelligent Request Validation:** The system automatically checks if a request exceeds the employee's available balance. Invalid requests are instantly rejected and the employee is notified.
 -   **Seamless Notification Workflow:** Managers are notified of valid pending requests, and employees are notified of the final decision (approved or rejected).
--   **Professional Email Sender:** All automated emails are sent from a custom email address (via Gmail/Outlook integration) instead of a generic no-reply address.
+-   **Professional Email Sender:** All automated emails are sent from a custom email address (via Gmail/Outlook integration).
 
 ## 🛠️ Tech Stack
 
