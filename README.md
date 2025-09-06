@@ -122,8 +122,13 @@ Create a new Zap to handle notifications for valid requests.
 | **`Start Date`** | Date | |
 | **`End Date`** | Date | |
 | **`Number of Days`** | Formula | Formula: `IF(AND({Start Date}, {End Date}), WORKDAY_DIFF({Start Date}, {End Date}) + 1, 0)` |
+| **`Request Year`** | Formula | Formula: `IF({Start Date}, YEAR({Start Date}), BLANK())` |
+| **`Notes`** | Long Text | **(Optional notes from the employee.)** |
+| **`Submission Date`** | Created time | **(Automatically records when the request was submitted.)** |
 | **`Status`** | Single select | Options: `Pending`, `Approved`, `Rejected` |
+| **`Manager's Comment`** | Long Text | **(Optional comments from the manager during approval/rejection.)** |
 | **`Is Current Year?`** | Formula | **For annual reset.** Formula: `YEAR({Start Date}) = YEAR(TODAY())` |
+| **`Zapier Name`** | Formula | Formula: `{Employees}` |
 | **`Employee PTO Balance Rollup`** | Rollup | **For validation.** Rolls up `PTO Balance` from `Employees` with `SUM(values)` |
 | **`Is Valid Request?`** | Formula | **For filtering.** Formula: `IF({Employee PTO Balance Rollup} >= {Number of Days}, 1, 0)` |
 | **`Employee Email Lookup`** | Lookup | **For notifications.** Looks up `Employee Email` from the `Employee` link. |
