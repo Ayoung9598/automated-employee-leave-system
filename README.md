@@ -25,6 +25,7 @@ The system handles request submissions, validates them against available balance
 -   **Workflow Automation & Integration:** [Zapier](https://zapier.com/) & Airtable Automations
 
 ## ⚙️ System Architecture & Workflow
+```
 [START]
    |
    '-> 1. Employee Submits Request via Airtable Form
@@ -49,7 +50,8 @@ The system handles request submissions, validates them against available balance
                                                                                       '-> Sends final 'Approved' or 'Rejected'
                                                                                           confirmation email to EMPLOYEE
                                                                                       |
-                                                                                 [END]
+                                                                              [END]
+```
 ## 🚀 Step-by-Step Setup Guide
 
 ### Part 1: Airtable Base Configuration
