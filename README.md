@@ -38,14 +38,14 @@ The system handles request submissions, validates them against available balance
             |                                                   |
             '-> 3a. AIRTABLE AUTOMATION #1 (Auto-Reject)        '-> 3b. Record appears in the 'Valid Pending Requests' view
                  |                                                   |
-                 '-> Updates Status to 'Rejected'                   '-> 4b. ZAPIER TRIGGER fires
+                 '-> Updates Status to 'Rejected'                   '-> 4. ZAPIER AUTOMATION TRIGGER fires
                  '-> Sends 'Rejected' email to EMPLOYEE                 |
                  '-> Sends FYI email to MANAGER                         '-> Sends 'Approval Required' email to MANAGER
                  |                                                         |
-            [END]                                                        '-> 5b. Manager clicks link and manually changes
+            [END]                                                        '-> 5. Manager changes
                                                                               Status to 'Approved' or 'Rejected' in Airtable
                                                                                  |
-                                                                                 '-> 6b. AIRTABLE AUTOMATION #2 (Status Update)
+                                                                                 '-> 6. AIRTABLE AUTOMATION #2 (Status Update)
                                                                                       |
                                                                                       '-> Sends final 'Approved' or 'Rejected'
                                                                                           confirmation email to EMPLOYEE
