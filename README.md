@@ -30,7 +30,7 @@ The system handles request submissions, validates them against available balance
    |
    '-> 1. Employee Submits Request via Airtable Form
        |
-       '-> 2. System Validates Request (Is {Number of Days} <= {PTO Balance}?)
+       '-> 2. System Validates Request (Check if Number of Days <= PTO Balance)
             |
             |---------------------------------------------------|
             |                                                   |
