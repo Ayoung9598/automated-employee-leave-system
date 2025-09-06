@@ -95,7 +95,6 @@ Create a new Zap to handle notifications for valid requests.
 3.  **Action: "Send Email" in Gmail/Outlook**
     -   **To:** Use the `Manager Email` from the "Find Record" step.
     - **Body:** Include all relevant details from the trigger step.
-    - **Pro-Tip:** Add the `Airtable Record URL` from the trigger data into the email body to give managers a direct link to the record for quick approval.
 
 ---
 
