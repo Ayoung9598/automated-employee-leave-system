@@ -25,26 +25,31 @@ The system handles request submissions, validates them against available balance
 -   **Workflow Automation & Integration:** [Zapier](https://zapier.com/) & Airtable Automations
 
 ## ⚙️ System Architecture & Workflow
-Employee Submits Leave Request (via Airtable Form)
-|
-'-> Record is created in Airtable's 'Leave Requests' table
-|
-'-> Is the request VALID? (Days Requested <= PTO Balance)
-|
-+--> YES: The record appears in the "Valid Pending Requests" view.
-|    |
-|    '-> ZAPIER TRIGGER fires:
-|         |
-|         1. Finds the employee's manager details.
-|         2. Sends an email notification to the manager with an approval link.
-|
-+--> NO: The request is INVALID.
-|
-'-> AIRTABLE AUTOMATION fires:
-|
-1. Updates the request status to "Rejected".
-2. Sends an email to the EMPLOYEE explaining why.
-3. Sends an FYI email to the MANAGER.
+[START]
+   |
+   '-> 1. Employee Submits Request via Airtable Form
+       |
+       '-> 2. System Validates Request (Is {Number of Days} <= {PTO Balance}?)
+            |
+            |---------------------------------------------------|
+            |                                                   |
+      [IF INVALID]                                        [IF VALID]
+            |                                                   |
+            '-> 3a. AIRTABLE AUTOMATION #1 (Auto-Reject)        '-> 3b. Record appears in the 'Valid Pending Requests' view
+                 |                                                   |
+                 '-> Updates Status to 'Rejected'                   '-> 4b. ZAPIER TRIGGER fires
+                 '-> Sends 'Rejected' email to EMPLOYEE                 |
+                 '-> Sends FYI email to MANAGER                         '-> Sends 'Approval Required' email to MANAGER
+                 |                                                         |
+            [END]                                                        '-> 5b. Manager clicks link and manually changes
+                                                                              Status to 'Approved' or 'Rejected' in Airtable
+                                                                                 |
+                                                                                 '-> 6b. AIRTABLE AUTOMATION #2 (Status Update)
+                                                                                      |
+                                                                                      '-> Sends final 'Approved' or 'Rejected'
+                                                                                          confirmation email to EMPLOYEE
+                                                                                      |
+                                                                                 [END]
 
 ## 🚀 Step-by-Step Setup Guide
 
